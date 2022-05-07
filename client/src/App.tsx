@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Box from "@mui/material/Box";
 import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material";
 import { Nav } from "./components/nav/Nav";
@@ -32,17 +33,19 @@ const pages: Page[] = [
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Nav pages={pages} />
-        <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="/info" element={<Info />} />
-            <Route path="/photos" element={<Photos />} />
-            <Route path="/rsvp" element={<Rsvp />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Box sx={{ bgcolor: "secondary.light" }}>
+        <BrowserRouter>
+          <Nav pages={pages} />
+          <Routes>
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="/info" element={<Info />} />
+              <Route path="/photos" element={<Photos />} />
+              <Route path="/rsvp" element={<Rsvp />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Box>
     </ThemeProvider>
   );
 }

@@ -36,7 +36,7 @@ export const NavPopoverMenu = (props: Props) => {
         <NavLink
           to={page.path}
           key={page.title}
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: "none", color: "black" }}
         >
           <MenuItem onClick={onClose}>
             <Typography textAlign="center">{page.title}</Typography>

@@ -18,6 +18,7 @@ export const NavButtonMenu = (props: Props) => {
           style={({ isActive }) => ({
             textDecoration: isActive ? "underline" : "none",
           })}
+          tabIndex={-1}
         >
           <Button
             variant="text"

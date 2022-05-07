@@ -1,5 +1,7 @@
+import { Box } from "@mui/material";
 import React from "react";
+import { PageContent } from "../../components/PageContent";
 
 export const Home = () => {
-  return <div>Home page</div>;
+  return <PageContent>Home page</PageContent>;
 };

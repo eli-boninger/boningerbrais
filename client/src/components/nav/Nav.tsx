@@ -8,14 +8,18 @@ import { NavPopoverMenu } from "./NavPopoverMenu";
 import { NavButtonMenu } from "./NavButtonMenu";
 import { Heart } from "./Heart";
 import { HamburgerButton } from "./HamburgerButton";
+import { Page } from "../../models/page";
 
-const pages = ["Info", "Photos", "RSVP"];
+interface Props {
+  pages: Page[];
+}
 
-export const Nav = () => {
+export const Nav = (props: Props) => {
   const [anchorElNav, setAnchorElNav] = React.useState<
     (EventTarget & HTMLButtonElement) | null
   >(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { pages } = props;
 
   const handleOpenNavMenu = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>

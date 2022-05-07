@@ -2,11 +2,13 @@ import React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
+import { Page } from "../../models/page";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   anchorElNav: (EventTarget & HTMLButtonElement) | null;
   onClose: () => void;
-  pages: string[];
+  pages: Page[];
 }
 
 export const NavPopoverMenu = (props: Props) => {
@@ -31,9 +33,15 @@ export const NavPopoverMenu = (props: Props) => {
       }}
     >
       {pages.map((page) => (
-        <MenuItem key={page} onClick={onClose}>
-          <Typography textAlign="center">{page}</Typography>
-        </MenuItem>
+        <NavLink
+          to={page.path}
+          key={page.title}
+          style={{ textDecoration: "none" }}
+        >
+          <MenuItem onClick={onClose}>
+            <Typography textAlign="center">{page.title}</Typography>
+          </MenuItem>
+        </NavLink>
       ))}
     </Menu>
   );
